@@ -10,10 +10,6 @@ const contenedor = {
     flexWrap:"wrap"
 }
 
-const botones = {
-    display: "flex",
-    flexWrap:"wrap"
-}
 
 function TarjetaCarro() {
     let artir = []
@@ -53,13 +49,21 @@ function TarjetaCarro() {
                 </Col>
                 <Col sm="3">
                     <Link to="/principal">
-                        <Button color="success"> Pagar </Button>
+                        <Button color="success" onClick={pagar.bind(this)}> Pagar </Button>
                     </Link>
                 </Col>
             </Col>
             </div>
         </Row>
     )
+}
+
+function pagar(){
+    while(carro.length != 0){
+        carro.pop();
+    }
+    console.log(carro)
+    total.pop();
 }
 
 class Carrito extends React.Component{
